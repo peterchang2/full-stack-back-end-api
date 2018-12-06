@@ -1,4 +1,4 @@
-<% project_name = 'GotPics' %>
+<% project_name = 'PicstaFame' %>
 
 default: &default
   adapter: postgresql

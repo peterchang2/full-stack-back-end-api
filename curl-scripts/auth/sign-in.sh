@@ -1,4 +1,5 @@
 #!/bin/bash
+# EMAIL=peter@gmail.com PASSWORD=ooo
 
 curl "http://localhost:4741/sign-in" \
   --include \
