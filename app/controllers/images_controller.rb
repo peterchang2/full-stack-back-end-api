@@ -1,5 +1,5 @@
-class ImagesController < ApplicationController
-  before_action :set_image, only: [:show, :update, :destroy]
+class ImagesController < ProtectedController
+  before_action :set_image, only: %i[show update destroy]
 
   # GET /images
   def index
@@ -15,7 +15,7 @@ class ImagesController < ApplicationController
 
   # POST /images
   def create
-    @image = Image.new(image_params)
+    @image = current_user.images.build(image_params)
 
     if @image.save
       render json: @image, status: :created, location: @image
@@ -39,13 +39,14 @@ class ImagesController < ApplicationController
   end
 
   private
-    # Use callbacks to share common setup or constraints between actions.
-    def set_image
-      @image = Image.find(params[:id])
-    end
 
-    # Only allow a trusted parameter "white list" through.
-    def image_params
-      params.require(:image).permit(:date, :caption, :url, :user_id)
-    end
+  # Use callbacks to share common setup or constraints between actions.
+  def set_image
+    @image = current_user.images.find(params[:id])
+  end
+
+  # Only allow a trusted parameter "white list" through.
+  def image_params
+    params.require(:image).permit(:date, :caption, :url, :user_id)
+  end
 end
