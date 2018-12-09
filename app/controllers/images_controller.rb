@@ -3,7 +3,7 @@ class ImagesController < ProtectedController
 
   # GET /images
   def index
-    @images = Image.all
+    @images = current_user.images
 
     render json: @images
   end
