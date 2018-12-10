@@ -21,6 +21,7 @@ Bundler.require(*Rails.groups)
 module PicstaFame
   # :nodoc:
   class Application < Rails::Application
+
     # Settings in config/environments/* take precedence over those specified
     # here.
     # Application configuration should go into files in config/initializers
@@ -44,4 +45,5 @@ module PicstaFame
       ActiveRecord::Base.connection
     end
   end
+
 end

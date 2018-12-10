@@ -9,11 +9,17 @@ class ApplicationController < ActionController::API
     request.format = :json
   end
 
+  # after_action :set_access_control_headers
+  # def set_access_control_headers
+  #   headers['Access-Control-Allow-Origin'] = '*'
+  #   headers['Access-Control-Request-Method'] = '*'
+  # end
+
   AUTH_PROC = proc do |signed_token, _opts|
     token = begin
       Rails.application.message_verifier(:signed_token).verify(signed_token)
     rescue ActiveSupport::MessageVerifier::InvalidSignature
-      false
+    false
     end
     User.find_by token: token
   end
