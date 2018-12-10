@@ -9,11 +9,11 @@ class ApplicationController < ActionController::API
     request.format = :json
   end
 
-  # after_action :set_access_control_headers
-  # def set_access_control_headers
-  #   headers['Access-Control-Allow-Origin'] = '*'
-  #   headers['Access-Control-Request-Method'] = '*'
-  # end
+  after_action :set_access_control_headers
+  def set_access_control_headers
+    headers['Access-Control-Allow-Origin'] = 'https://peterchang2.github.io'
+    headers['Access-Control-Request-Method'] = '*'
+  end
 
   AUTH_PROC = proc do |signed_token, _opts|
     token = begin

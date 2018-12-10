@@ -1,10 +1,11 @@
 class ImagesController < ProtectedController
   before_action :set_image, only: %i[show update destroy]
-  # after_action :set_access_control_headers
-  # def set_access_control_headers
-  #   headers['Access-Control-Allow-Origin'] = '*'
-  #   headers['Access-Control-Request-Method'] = '*'
-  # end
+  after_action :set_access_control_headers
+  def set_access_control_headers
+    headers['Access-Control-Allow-Origin'] = 'https://peterchang2.github.io'
+    headers['Access-Control-Request-Method'] = '*'
+  end
+
   # GET /images
   def index
     @images = current_user.images
