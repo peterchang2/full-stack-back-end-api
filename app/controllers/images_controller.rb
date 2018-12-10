@@ -3,7 +3,7 @@ class ImagesController < ProtectedController
 
   # GET /images
   def index
-    @images = current_user.images
+    @images = current_user.images.order(date: :asc)
 
     render json: @images
   end
