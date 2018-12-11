@@ -24,7 +24,7 @@ ActiveRecord::Schema.define(version: 2018_12_06_191918) do
   end
 
   create_table "images", force: :cascade do |t|
-    t.datetime "date"
+    t.date "date"
     t.string "caption"
     t.string "url"
     t.bigint "user_id"
