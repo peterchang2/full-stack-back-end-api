@@ -1,5 +1,9 @@
 ## Objective
-* Create a back-end infrastructure for [Picsta](https://peterchang2.github.io/picsta-full-stack-front-end-client/), a simple image storing application using [Rails](https://github.com/peterchang2/picsta-full-stack-back-end-api) and [Heroku](https://picstafame.herokuapp.com/images). The front end GitHub can be found here: [Picsta GitHub](https://github.com/peterchang2/picsta-full-stack-front-end-client).
+* Create a back-end infrastructure for Picsta, a simple image storing application using Heroku, and Rails.
+* ### [Picsta](https://peterchang2.github.io/picsta-full-stack-front-end-client/)
+* ### [Front-end repo](https://github.com/peterchang2/picsta-full-stack-front-end-client).
+* ### [Back-end repo](https://github.com/peterchang2/picsta-full-stack-back-end-api)
+* ### [Heroku](https://picstafame.herokuapp.com/images)
 
 ## Description
 The API will store user information and resources associated with the user. Resources include the date, caption, and image url of a user's choosing. The image url will be validated with the proper extension and appended to the client view.
